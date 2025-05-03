@@ -10,11 +10,12 @@ body {
     font-family: "Lato", sans-serif;
 }
 section {
-    background-color: #fff;
+    background-color: rgb(255, 255, 255, 0.1);
     border-radius: 12px;
     box-shadow: 0 0 1rem rgb(0, 0, 0, 0.2);
     margin: 2.5rem auto;
     max-width: 500px;
+    opacity: 1;
     padding: 1rem;
 }
 h2, h3 {
