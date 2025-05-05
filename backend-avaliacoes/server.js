@@ -2,12 +2,22 @@ const express = require('express'); // Framework para o servidor
 const bodyParser = require('body-parser'); // Middleware para interpretar JSON no corpo da requiseção
 const cors = require('cors'); // Middleware para permitir requisições de outras origens (CORS)
 const fs = require('fs').promises; // Módulo para manipulação de arquivos com Promises
+const path = require('path'); 
 
 const app = express();
 const port = 3000; // Define a porta do servidor
 
 app.use(cors()); // Habilita o CORS
 app.use(bodyParser.json()); // Permite receber JSON nas requisições
+
+app.get('/', (req, res) => {
+    res.send('<h1>Servidor Express Funcionando!</h1>');
+  });
+
+//Middleware para servir arquivo estáticos da pasta 'public
+console.log('Caminho da pasta public:', path.join(__dirname, 'public'));
+app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static('public'));
 
 const DATA_FILE = 'avaliacoes.json'; // Nome do arquivo onde as avaliaçoes serão salvas
 
