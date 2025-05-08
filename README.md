@@ -1,2 +1,0 @@
-# Avaliacao
-Pagina de avaliações
